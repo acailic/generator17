@@ -14,6 +14,7 @@ Metodologije brzog razvoj softvera-MBRS17
 6. Pokrenuti target deploy preko Ant-a u build.xml
 7. Pokrenuti projekat po uputstvu iz trecih vezbi
 8. Kada se otvori MagicDraw, ucitati model i kliknuti na dugme Generate <br />
+Za test demo:   <br />
 --- dodatno postaviti konfiguracione fajlove za spring ( u njemu konekcija ka bazi) <br />
 --- pom.xml <br />
 --- Abstract-ne klase za Spring,  DTO, Service <br />
@@ -27,6 +28,10 @@ Metodologije brzog razvoj softvera-MBRS17
 2. Instalirati SpringToolSuite (STS)
 3. Pokrenuti STS i za workspace staviti folder koji sadrzi root folder za generisanje koda (root folder za generisanje koda je ujedno i root folder projekta koji pokrecemo u STS)
 4. Kopirati demo projekat u zadati workspace i otvoriti ga u STS okruzenju
+--- dodatno postaviti konfiguracione fajlove za spring ( u njemu konekcija ka bazi) <br />
+--- pom.xml <br />
+--- Abstract-ne klase za Spring,  DTO, Service <br />
+--- JS fajlove za angular, main, controllers, services. CSS <br />
 5. Pokrenuti projekat kao SpringBoot aplikaciju
 
 # Kada ponovo izgenerisemo kod, osvezimo test projekat i vidimo izmene
