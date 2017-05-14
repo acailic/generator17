@@ -3,21 +3,21 @@ Metodologije brzog razvoj softvera-MBRS17
 
 # Podesavanje okruzenja
 
-1. Instalirati MagicDraw trial verziju 18.1
---- Ukoliko imate problema sa sajtom predstavite se preko vpn kao da ste amerikanac ili slično.
+1. Instalirati MagicDraw trial verziju 18.1 <br />
+--- Ukoliko imate problema sa sajtom predstavite se preko vpn kao da ste amerikanac ili slično. <br />
 2. Otvoriti projekat PluginDevelopment u Eclipse okruzenju
-3. Podesiti projekat po uputstvu iz trecih vezbi (MagicDraw development in Eclipse)
--- možete da ubacite i vežbe koje dolaze direktno sa magic draw, ukoliko imate problema sa Magic Draw Main klasom.
-4. Promeniti putanju do instalacionog foldera MagicDraw u build.properties
--- samo regularni karakteri u putanji
+3. Podesiti projekat po uputstvu iz trecih vezbi (MagicDraw development in Eclipse) <br />
+-- možete da ubacite i vežbe koje dolaze direktno sa magic draw, ukoliko imate problema sa Magic Draw Main klasom. <br />
+4. Promeniti putanju do instalacionog foldera MagicDraw u build.properties <br /> 
+-- samo regularni karakteri u putanji <br />
 5. Promeniti putanju do foldera za generisanje koda u resources/projectoptions.properties
 6. Pokrenuti target deploy preko Ant-a u build.xml
 7. Pokrenuti projekat po uputstvu iz trecih vezbi
-8. Kada se otvori MagicDraw, ucitati model i kliknuti na dugme Generate
---- dodatno postaviti konfiguracione fajlove za spring ( u njemu konekcija ka bazi)
---- pom.xml
---- Abstract-ne klase za Spring,  DTO, Service
---- JS fajlove za angular, main, controllers, services. CSS
+8. Kada se otvori MagicDraw, ucitati model i kliknuti na dugme Generate <br />
+--- dodatno postaviti konfiguracione fajlove za spring ( u njemu konekcija ka bazi) <br />
+--- pom.xml <br />
+--- Abstract-ne klase za Spring,  DTO, Service <br />
+--- JS fajlove za angular, main, controllers, services. CSS <br />
 
 # Kod je izgenerisan u zadatom folderu
 
