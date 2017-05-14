@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+        id="my.first.plugin"
+        name="My First Plugin"
+        version="1.0"
+        provider-name="FTN Team X"
+        class="myplugin.MyPlugin">
+        <requires>
+           <api version="1.0"/>
+        </requires>
+        <runtime>
+           <library name="myplugin.jar"/>
+           <library name="freemarker.jar"/>
+           <library name="xstream-1.3.1.jar"/>
+        </runtime>
+</plugin>

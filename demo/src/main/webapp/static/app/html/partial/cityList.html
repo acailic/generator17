@@ -1,0 +1,47 @@
+	
+<h2>Cities<span class="badge">{{totalItems}}</span></h2>
+	
+<div ng-init="page=1; getAll();">
+
+
+<div class="row">
+  	<div ng-repeat="city in cityList" class="col-md-3">
+    	<div class="thumbnail">
+	      	<div class="caption">
+	      	<h3> {{city.name}} </h3>
+				<p>{{ city.country.name }}</p>	
+			
+        	</div>
+        	<div>
+	      		<span>
+					<a class="btn btn-success btn-sm" href="/#/cityList/{{ city.id }}">view</a>
+	      		</span>
+	      		<span>
+					<a class="btn btn-warning btn-sm" href="/#/cityList/edit/{{ city.id }}">edit</a>
+				</span>
+				<span>
+					<button class="btn btn-danger btn-sm" ng-click="remove(city.id)">delete</button>
+	      		</span>
+      		</div>
+    	</div>
+  	</div>
+</div>
+
+	
+<div>
+
+<div class="row text-center">
+	<span ng-hide="hideSpinner" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+	<span ng-show="showError" class="label label-danger">Ooops, something went wrong! :)</span>
+</div>
+
+<div class="row">
+	<uib-pagination total-items="totalItems" items-per-page="{{maxSize}}" ng-model="page" ng-click="getAll()" max-size="maxSize" class="pagination-sm" boundary-links="true"></uib-pagination>
+</div>
+
+<a href="/#/cityList/add">Add new City</a>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	
+

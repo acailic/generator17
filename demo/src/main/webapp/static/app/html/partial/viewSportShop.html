@@ -1,0 +1,66 @@
+<h2>View SportShop</h2>
+
+<div ng-init="getOne()">
+
+<form class="form-horizontal">
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">Name</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="sportShop.name" disabled>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">StreetName</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="sportShop.streetName" disabled>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">StreetNumber</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="sportShop.streetNumber" disabled>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">GpsLatitude</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="sportShop.gpsLatitude" disabled>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">SportShopBrand</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="sportShop.sportShopBrand.name" disabled>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">City</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="sportShop.city.name" disabled>
+		</div>	
+	</div>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">GpsLongitude</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="sportShop.gpsLongitude" disabled>
+		</div>	
+	</div>
+</form>
+
+<div class="row">
+	<h3>Menu Items</h3>
+	<div class="col-md-4">
+		<ul ng-repeat="menuItem in menuItemList" class="list-group">
+			<li class="list-group-item">{{menuItem.name}}</li>
+		</ul>
+	</div>
+</div>
+
+
+</div>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	

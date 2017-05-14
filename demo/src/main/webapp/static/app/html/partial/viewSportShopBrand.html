@@ -1,0 +1,32 @@
+<h2>View SportShopBrand</h2>
+
+<div ng-init="getOne()">
+
+<form class="form-horizontal">
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">Name</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="sportShopBrand.name" disabled>
+		</div>	
+	</div>
+		</div>	
+	</div>
+		</div>	
+	</div>
+</form>
+
+<div class="row">
+	<h3>Sport Shops</h3>
+	<div class="col-md-4">
+		<ul ng-repeat="sportShop in sportShopList" class="list-group">
+			<li class="list-group-item">{{sportShop.name}}</li>
+		</ul>
+	</div>
+</div>
+
+
+</div>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	

@@ -1,0 +1,43 @@
+<h2>View MenuItem</h2>
+
+<div ng-init="getOne()">
+
+<form class="form-horizontal">
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">Name</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="menuItem.name" disabled>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">Description</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="menuItem.description" disabled>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">Price</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="menuItem.price" disabled>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">MenuItemCategory</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="menuItem.menuItemCategory.name" disabled>
+		</div>	
+	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">SportShop</label>
+	    <div class="col-sm-4">
+			<input type="text" class="form-control" ng-model="menuItem.sportShop.name" disabled>
+		</div>	
+	</div>
+</form>
+
+
+</div>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	

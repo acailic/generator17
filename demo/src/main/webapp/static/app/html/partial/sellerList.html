@@ -1,0 +1,56 @@
+	
+<h2>Sellers<span class="badge">{{totalItems}}</span></h2>
+	
+<div ng-init="page=1; getAll();">
+
+	
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<td>Username</td>
+			<td>Password</td>
+			<td>FirstName</td>
+			<td>LastName</td>
+			<td>Email</td>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="seller in sellerList">
+			<td>{{ seller.username }}</td>			
+			
+			<td>{{ seller.password }}</td>			
+			
+			<td>{{ seller.firstName }}</td>			
+			
+			<td>{{ seller.lastName }}</td>			
+			
+			<td>{{ seller.email }}</td>			
+			
+			<td>
+				<a class="btn btn-success btn-sm" href="/#/sellerList/{{ seller.id }}">view</a>
+				<a class="btn btn-warning btn-sm" href="/#/sellerList/edit/{{ seller.id }}">edit</a>
+				<button class="btn btn-danger btn-sm" ng-click="remove(seller.id)">delete</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+	
+<div>
+
+<div class="row text-center">
+	<span ng-hide="hideSpinner" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+	<span ng-show="showError" class="label label-danger">Ooops, something went wrong! :)</span>
+</div>
+
+<div class="row">
+	<uib-pagination total-items="totalItems" items-per-page="{{maxSize}}" ng-model="page" ng-click="getAll()" max-size="maxSize" class="pagination-sm" boundary-links="true"></uib-pagination>
+</div>
+
+<a href="/#/sellerList/add">Add new Seller</a>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	
+

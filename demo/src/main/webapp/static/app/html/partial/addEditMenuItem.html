@@ -1,0 +1,63 @@
+<h2>{{addEditHeading}} MenuItem</h2>
+
+<form ng-init="initAddEditPage(); getOne()" class="form-horizontal">
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">Name</label>
+	    <div class="col-sm-4">
+	    	<input type="text" class="form-control" placeholder="Name..." ng-model="menuItem.name" >
+	    </div>
+ 	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">Description</label>
+	    <div class="col-sm-4">
+	    	<input type="text" class="form-control" placeholder="Description..." ng-model="menuItem.description" >
+	    </div>
+ 	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">Price</label>
+	    <div class="col-sm-4">
+	    	<input type="number" class="form-control" placeholder="Price..." ng-model="menuItem.price" >
+	    </div>
+ 	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">MenuItemCategory</label>
+	    <div class="col-sm-4">
+	    	<select class="form-control" ng-model="menuItem.menuItemCategory">
+	    		<option ng-repeat="menuItemCategory in menuItemCategoryList" value="{{menuItemCategory}}"> {{menuItemCategory.name}} </option>
+	    	</select>
+	    </div>
+ 	</div>
+	<div class="form-group">
+	    <label class="col-sm-2 control-label">SportShop</label>
+	    <div class="col-sm-4">
+	    	<select class="form-control" ng-model="menuItem.sportShop">
+	    		<option ng-repeat="sportShop in sportShopList" value="{{sportShop}}"> {{sportShop.name}} </option>
+	    	</select>
+	    </div>
+ 	</div>
+
+	<div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	    	<button ng-disabled="   !menuItem.name    && !menuItem.description    && !menuItem.price    && !menuItem.menuItemCategory    && !menuItem.sportShop  "
+	    			ng-click="open()" type="submit" class="btn btn-info">Save</button>
+	    </div>
+  	</div>
+</form>
+
+<script type="text/ng-template" id="myModalContent.html">
+	<div class="modal-header">
+	   	<h3 class="modal-title">Confirmation</h3>
+	</div>
+	<div class="modal-body">
+	   	<p>Are you sure you want to add/edit activity?</p>
+	</div>
+	<div class="modal-footer">
+	   	<button class="btn btn-primary" type="button" ng-click="confirm()">Confirm</button>
+	   	<button class="btn btn-warning" type="button" ng-click="revert()">Revert</button>
+	</div>
+</script>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	
+	

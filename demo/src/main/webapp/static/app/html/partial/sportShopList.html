@@ -1,0 +1,57 @@
+	
+<h2>Sport Shops<span class="badge">{{totalItems}}</span></h2>
+	
+<div ng-init="page=1; getAll();">
+
+
+<div class="row">
+  	<div ng-repeat="sportShop in sportShopList" class="col-md-3">
+    	<div class="thumbnail">
+	      	<div class="caption">
+	      	<h3> {{sportShop.name}} </h3>
+				<p>{{ sportShop.streetName }}</p>			
+			
+				<p>{{ sportShop.streetNumber }}</p>			
+			
+				<p>{{ sportShop.gpsLatitude }}</p>			
+			
+				<p>{{ sportShop.sportShopBrand.name }}</p>	
+			
+				<p>{{ sportShop.city.name }}</p>	
+			
+				<p>{{ sportShop.gpsLongitude }}</p>			
+			
+        	</div>
+        	<div>
+	      		<span>
+					<a class="btn btn-success btn-sm" href="/#/sportShopList/{{ sportShop.id }}">view</a>
+	      		</span>
+	      		<span>
+					<a class="btn btn-warning btn-sm" href="/#/sportShopList/edit/{{ sportShop.id }}">edit</a>
+				</span>
+				<span>
+					<button class="btn btn-danger btn-sm" ng-click="remove(sportShop.id)">delete</button>
+	      		</span>
+      		</div>
+    	</div>
+  	</div>
+</div>
+
+	
+<div>
+
+<div class="row text-center">
+	<span ng-hide="hideSpinner" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+	<span ng-show="showError" class="label label-danger">Ooops, something went wrong! :)</span>
+</div>
+
+<div class="row">
+	<uib-pagination total-items="totalItems" items-per-page="{{maxSize}}" ng-model="page" ng-click="getAll()" max-size="maxSize" class="pagination-sm" boundary-links="true"></uib-pagination>
+</div>
+
+<a href="/#/sportShopList/add">Add new SportShop</a>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	
+

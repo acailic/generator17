@@ -1,0 +1,56 @@
+	
+<h2>Menu Items<span class="badge">{{totalItems}}</span></h2>
+	
+<div ng-init="page=1; getAll();">
+
+	
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Description</td>
+			<td>Price</td>
+			<td>MenuItemCategory</td>
+			<td>SportShop</td>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="menuItem in menuItemList">
+			<td>{{ menuItem.name }}</td>			
+			
+			<td>{{ menuItem.description }}</td>			
+			
+			<td>{{ menuItem.price }}</td>			
+			
+			<td>{{ menuItem.menuItemCategory.name }}</td>	
+			
+			<td>{{ menuItem.sportShop.name }}</td>	
+			
+			<td>
+				<a class="btn btn-success btn-sm" href="/#/menuItemList/{{ menuItem.id }}">view</a>
+				<a class="btn btn-warning btn-sm" href="/#/menuItemList/edit/{{ menuItem.id }}">edit</a>
+				<button class="btn btn-danger btn-sm" ng-click="remove(menuItem.id)">delete</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+	
+<div>
+
+<div class="row text-center">
+	<span ng-hide="hideSpinner" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+	<span ng-show="showError" class="label label-danger">Ooops, something went wrong! :)</span>
+</div>
+
+<div class="row">
+	<uib-pagination total-items="totalItems" items-per-page="{{maxSize}}" ng-model="page" ng-click="getAll()" max-size="maxSize" class="pagination-sm" boundary-links="true"></uib-pagination>
+</div>
+
+<a href="/#/menuItemList/add">Add new MenuItem</a>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	
+
