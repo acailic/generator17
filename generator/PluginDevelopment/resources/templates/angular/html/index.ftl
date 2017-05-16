@@ -36,7 +36,7 @@
 	<div class="jumbotron">
 		<div class="container text-center">
 			<h1>Demo App</h1>
-			<p>Web Application for Evidenting Restaurants</p>
+			<p>Web Application for Evidenting SportShops</p>
 		</div>
 	</div>
 	

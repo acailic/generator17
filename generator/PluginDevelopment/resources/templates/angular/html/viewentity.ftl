@@ -22,6 +22,7 @@
  	</#list>
 </form>
 
+
 	<#list properties as property>
 		<#if property.upper == -1 && (!property.hidden?? || property.hidden == false) &&
 		 	property.uiProperty?? && property.uiProperty.label?? &&
