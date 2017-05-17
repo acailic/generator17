@@ -5,7 +5,7 @@ demoApp.config(['$routeProvider', function($routeProvider) {
         .when('/', {
             templateUrl : '/static/app/html/partial/home.html'
         })
-                .when('/countryList', {
+        .when('/countryList', {
             templateUrl : '/static/app/html/partial/countryList.html',
             controller : 'CountryController'
         })
